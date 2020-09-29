@@ -24,8 +24,8 @@ describe('Calculator', () => {
         updateDisplay={wrapper.instance().updateDisplay}
       />
     ])).toEqual(true);
-  });
-});
+  }); 
+}); //end of describe calculator
 
 describe('mounted Calculator', () => {
   let wrapper;
@@ -54,7 +54,7 @@ describe('mounted Calculator', () => {
     expect(spy).toHaveBeenCalledTimes(0);
     wrapper.find('.submit-key').simulate('click');
     expect(spy).toHaveBeenCalledTimes(1);
-  });
+  }); 
   describe('setOperator', () => {
     let wrapper;
   
@@ -73,10 +73,16 @@ describe('mounted Calculator', () => {
       expect(wrapper.state('storedValue')).toEqual('5');
     });
   
-    it('updates the value of displayValue to "0"', () => {
+    // it('updates the value of displayValue to "0"', () => {
+    //   wrapper.setState({ displayValue: '5' });
+    //   wrapper.instance().setOperator('+');
+    //   expect(wrapper.state('displayValue')).toEqual('0');
+    // });
+
+    it('updates the value of displayValue to "5"', () => {
       wrapper.setState({ displayValue: '5' });
       wrapper.instance().setOperator('+');
-      expect(wrapper.state('displayValue')).toEqual('0');
+      expect(wrapper.state('displayValue')).toEqual('5');
     });
 
     

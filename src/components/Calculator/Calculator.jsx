@@ -75,7 +75,9 @@ class Calculator extends Component {
       // update storedValue to the value of displayValue
       storedValue = displayValue;
       // reset the value of displayValue to '0'
-      displayValue = '0';
+     // changed to reset the value of displayValue to storedValue
+      //displayValue = '0';
+      //displayValue = storedValue;
       // update the value of selectedOperator to the given value
       selectedOperator = value;
     } else {
