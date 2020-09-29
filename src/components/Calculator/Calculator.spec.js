@@ -26,7 +26,7 @@ describe('Calculator', () => {
     ])).toEqual(true);
   }); 
 
-
+  
 
   describe('setOperator', () => {
     let wrapper;
@@ -58,7 +58,25 @@ describe('Calculator', () => {
       expect(wrapper.state('displayValue')).toEqual('5');
     });
 
-    
+    it('updates the value of displayValue to "5"', () => {
+      wrapper.setState({ displayValue: '5' });
+      wrapper.instance().setOperator('x');
+      expect(wrapper.state('displayValue')).toEqual('5');
+    });
+
+    it('updates the value of displayValue to "5"', () => {
+      wrapper.setState({ displayValue: '5' });
+      wrapper.instance().setOperator('/');
+      expect(wrapper.state('displayValue')).toEqual('5');
+    });
+
+    it('should replace the display value with the value after the operator is set',()=>{
+      wrapper.setState({ displayValue: '5' });
+        wrapper.instance().setOperator('x');
+        expect(wrapper.state('displayValue')).toEqual('5');
+        wrapper.setState({ displayValue: '4' });
+        expect(wrapper.state('displayValue')).toEqual('4');
+    })
   
     it('selectedOperator is not an empty string, does not update storedValue', () => {
       wrapper.setState({ displayValue: '5' });
@@ -97,14 +115,7 @@ describe('Calculator', () => {
       expect(wrapper.state('displayValue')).toEqual('6');
     });
 
-    it('should display the storedValue when the operator is pressed ', () => {
-      wrapper.setState({ storedValue: '6' });
-      
-      wrapper.setState({ selectedOperator: 'x' });
-     
-      wrapper.instance().callOperator();
-      expect(wrapper.state('displayValue')).toEqual('6');
-    });
+    
   
     it('updates displayValue to the quotient of storedValue and displayValue', () => {
       wrapper.setState({ storedValue: '3' });
