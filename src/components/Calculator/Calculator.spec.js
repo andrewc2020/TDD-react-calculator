@@ -78,6 +78,8 @@ describe('mounted Calculator', () => {
       wrapper.instance().setOperator('+');
       expect(wrapper.state('displayValue')).toEqual('0');
     });
+
+    
   
     it('selectedOperator is not an empty string, does not update storedValue', () => {
       wrapper.setState({ displayValue: '5' });
@@ -115,6 +117,15 @@ describe('mounted Calculator', () => {
       wrapper.instance().callOperator();
       expect(wrapper.state('displayValue')).toEqual('6');
     });
+
+    it('should display the storedValue when the operator is pressed ', () => {
+      wrapper.setState({ storedValue: '6' });
+      
+      wrapper.setState({ selectedOperator: 'x' });
+     
+      wrapper.instance().callOperator();
+      expect(wrapper.state('displayValue')).toEqual('6');
+    });
   
     it('updates displayValue to the quotient of storedValue and displayValue', () => {
       wrapper.setState({ storedValue: '3' });
@@ -122,6 +133,14 @@ describe('mounted Calculator', () => {
       wrapper.setState({ selectedOperator: '/' });
       wrapper.instance().callOperator();
       expect(wrapper.state('displayValue')).toEqual('1.5');
+    });
+
+    it('updates displayValue to the quotient of storedValue and displayValue to the correct decimal places and remainder', () => {
+      wrapper.setState({ storedValue: '3.25' });
+      wrapper.setState({ displayValue: '2' });
+      wrapper.setState({ selectedOperator: '/' });
+      wrapper.instance().callOperator();
+      expect(wrapper.state('displayValue')).toEqual('1.625');
     });
   
     it('updates displayValue to "0" if operation results in "NaN"', () => {
@@ -156,12 +175,12 @@ describe('mounted Calculator', () => {
       expect(wrapper.state('displayValue')).toEqual('0');
     });
 
-    it('updates displayValue to "0.0" if called with . and there is no displayValue',()=>{
-      wrapper.setState({ storedValue: '.' });
-      wrapper.setState({ displayValue: '' });
+    it('updates displayValue to "0" if called with . and there is no storedValue',()=>{
+      wrapper.setState({ storedValue: '' });
+      wrapper.setState({ displayValue: '.' });
       wrapper.setState({ selectedOperator: '' });
       wrapper.instance().callOperator();
-      expect(wrapper.state('displayValue')).toEqual('0.0');
+      expect(wrapper.state('displayValue')).toEqual('0');
     })
 
     

@@ -34,8 +34,8 @@ class Calculator extends Component {
     const updateStoredValue = displayValue;
 
     // parse strings for operations
-    displayValue = parseInt(displayValue, 10);
-    storedValue = parseInt(storedValue, 10);
+    displayValue = parseFloat(displayValue);
+    storedValue = parseFloat(storedValue);
 
     // performs selected operation
     switch (selectedOperator) {
@@ -96,8 +96,7 @@ class Calculator extends Component {
     
     // prevent multiple occurences of '.'
     if (value === '.' && displayValue.includes('.')) value = '';
-    // display 0.0 if 
-    if (value === '.' && displayValue === '') value = '0.0';
+    
     
 
     if (value === 'ce') {
@@ -112,7 +111,6 @@ class Calculator extends Component {
     }
 
     
-
     this.setState({ displayValue });
   }
 
