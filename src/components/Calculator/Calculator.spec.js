@@ -46,37 +46,19 @@ describe('Calculator', () => {
       expect(wrapper.state('storedValue')).toEqual('5');
     });
   
-    // it('updates the value of displayValue to "0"', () => {
-    //   wrapper.setState({ displayValue: '5' });
-    //   wrapper.instance().setOperator('+');
-    //   expect(wrapper.state('displayValue')).toEqual('0');
-    // });
-
-    it('updates the value of displayValue to "5"', () => {
+    it('updates the value of displayValue to "0"', () => {
       wrapper.setState({ displayValue: '5' });
       wrapper.instance().setOperator('+');
-      expect(wrapper.state('displayValue')).toEqual('5');
+      expect(wrapper.state('displayValue')).toEqual('0');
     });
 
-    it('updates the value of displayValue to "5"', () => {
-      wrapper.setState({ displayValue: '5' });
-      wrapper.instance().setOperator('x');
-      expect(wrapper.state('displayValue')).toEqual('5');
-    });
+   
 
-    it('updates the value of displayValue to "5"', () => {
-      wrapper.setState({ displayValue: '5' });
-      wrapper.instance().setOperator('/');
-      expect(wrapper.state('displayValue')).toEqual('5');
-    });
+    
 
-    it('should replace the display value with the value after the operator is set',()=>{
-      wrapper.setState({ displayValue: '5' });
-        wrapper.instance().setOperator('x');
-        expect(wrapper.state('displayValue')).toEqual('5');
-        wrapper.setState({ displayValue: '4' });
-        expect(wrapper.state('displayValue')).toEqual('4');
-    })
+    
+
+   
   
     it('selectedOperator is not an empty string, does not update storedValue', () => {
       wrapper.setState({ displayValue: '5' });
