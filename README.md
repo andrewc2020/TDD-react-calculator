@@ -12,7 +12,7 @@ The post ends with a challenge to find and fix bugs in the calculator, which is 
 
 This worked example includes a fix for the calculator which produced the wrong result for 3.25 / 2
 
-It produced the result 1.5.  He had warned us that the calculator does not handle decimals well.
+It produced the result 1.5.  He had warned us that the calculator does not handle decimals well!
 
 The correct result is 1.625.
 
