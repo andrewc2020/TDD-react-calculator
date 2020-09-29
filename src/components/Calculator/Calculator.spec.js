@@ -136,6 +136,14 @@ describe('Calculator', () => {
       expect(wrapper.state('displayValue')).toEqual('1.5');
     });
 
+    it('updates displayValue to the quotient of storedValue and displayValue to the correct decimal places and remainder', () => {
+      wrapper.setState({ storedValue: '3.25' });
+      wrapper.setState({ displayValue: '2' });
+      wrapper.setState({ selectedOperator: '/' });
+      wrapper.instance().callOperator();
+      expect(wrapper.state('displayValue')).toEqual('1.625');
+    });
+
     it('updates displayValue to "0" if operation results in "NaN"', () => {
       wrapper.setState({ storedValue: '3' });
       wrapper.setState({ displayValue: 'string' });
