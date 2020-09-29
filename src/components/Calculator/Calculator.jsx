@@ -25,7 +25,7 @@ class Calculator extends Component {
   }
 
   
-  componentWillMount = () => {
+  componentDidMount = () => {
     document.addEventListener('keydown', this.handleKeyPress);
   };
 
