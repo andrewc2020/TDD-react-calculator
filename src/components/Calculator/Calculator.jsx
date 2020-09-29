@@ -144,6 +144,7 @@ class Calculator extends Component {
     <div className="calculator-container">
       <Display displayValue={displayValue} />
       <Keypad
+        handleKeyPress={this.handleKeyPress}
         callOperator={this.callOperator}
         numbers={numbers}
         operators={operators}

@@ -40,6 +40,7 @@ describe('mounted Keypad', () => {
   beforeEach(() => {
     wrapper = mount(
       <Keypad
+        handleKeyPress={jest.fn()}
         callOperator={jest.fn()}
         numbers={[]}
         operators={[]}
