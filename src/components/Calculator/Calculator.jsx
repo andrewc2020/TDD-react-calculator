@@ -25,8 +25,28 @@ class Calculator extends Component {
   }
 
   
+  componentWillMount = () => {
+    document.addEventListener('keydown', this.handleKeyPress);
+  };
+
+  componentWillUnmount = () => {
+    document.removeEventListener('keydown', this.handleKeyPress);
+  };
   
-  
+  handleKeyPress = event => {
+    const { numbers, operators } = this.state;
+
+    if (event.key === 'Backspace') this.updateDisplay('ce');
+    if (event.key === 'Enter' || event.key === '=') this.callOperator();
+
+    numbers.forEach(number => {
+      if (event.key === number) this.updateDisplay(number);
+    });
+
+    operators.forEach(operator => {
+      if (event.key === operator) this.setOperator(operator);
+    });
+  };
 
   callOperator = () => {
     let { displayValue, selectedOperator, storedValue } = this.state;
