@@ -28,8 +28,17 @@ and part two at
 https://testdriven.io/blog/tdd-with-react-jest-and-enzyme-part-two/
 
 
+git clone https://github.com/andrewc2020/TDD-react-calculator.git
 
-## Local Setup for starting from scratch from Caleb's repository.
+npm install
+
+npm test
+
+npm start
+
+
+
+## Local Setup for starting from scratch from Caleb's init repository.
 
 ```sh
 $ git clone git@github.com:calebpollman/react-calculator.git
