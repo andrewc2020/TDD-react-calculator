@@ -36,7 +36,7 @@ npm test
 
 npm start
 
-
+deployed to heroku https://fathomless-retreat-68249.herokuapp.com/
 
 ## Local Setup for starting from scratch from Caleb's init repository.
 
