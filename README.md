@@ -40,6 +40,8 @@ deployed to heroku https://fathomless-retreat-68249.herokuapp.com/
 
 ## Local Setup for starting from scratch from Caleb's init repository (recommended).
 
+Be sure to checkout the init branch before starting the tutorial.
+
 ```sh
 $ git clone git@github.com:calebpollman/react-calculator.git
 ```
