@@ -10,7 +10,7 @@ https://testdriven.io/blog/tdd-with-react-jest-and-enzyme-part-two/
 
 The post ends with a challenge to find and fix bugs in the calculator, which is a great way to apply what you have learned.
 
-This worked example includes a fix for the calculator which produced the wrong result for 3.25 / 2
+This worked example includes a fix for the calculator which generated the wrong result for 3.25 / 2
 
 It produced the result 1.5.  He had warned us that the calculator does not handle decimals well!
 
@@ -38,7 +38,7 @@ npm start
 
 deployed to heroku https://fathomless-retreat-68249.herokuapp.com/
 
-## Local Setup for starting from scratch from Caleb's init repository.
+## Local Setup for starting from scratch from Caleb's init repository (recommended).
 
 ```sh
 $ git clone git@github.com:calebpollman/react-calculator.git
